@@ -1,6 +1,9 @@
 {
   "name": "@sv-oss/changelog-autotagger",
   "description": "Automatically tags JIRA tickets generated through a changelog with the relevant release number",
+  "bin": {
+    "changelog-autotagger": "bin/changelog-autotagger"
+  },
   "scripts": {
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
