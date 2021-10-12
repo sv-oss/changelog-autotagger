@@ -11,17 +11,16 @@ Two options are required for changelog-autotagger to function, first being a rel
 There are 2 key ways to use changelog-autotagger. First is through npx as below:
 
 ```bash
-    npx @sv-oss/changelog-autotagger ./my-release-notes.txt --release-version=1.2.3
+npx @sv-oss/changelog-autotagger ./my-release-notes.txt --release-version=1.2.3
 ```
 
 Second is to add it as a global dependency and invoke it directly
 
 ```bash
-    yarn global add @sv-oss/changelog-autotagger
-    // or
-    npm i -g @sv-oss/changelog-autotagger
-
-    changelog-autotagger ./my-release-notes.txt --release-version=1.2.3
+yarn global add @sv-oss/changelog-autotagger
+// or
+npm i -g @sv-oss/changelog-autotagger
+changelog-autotagger ./my-release-notes.txt --release-version=1.2.3
 ```
 
 ### Options
