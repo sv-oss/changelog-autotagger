@@ -23,6 +23,18 @@ npm i -g @sv-oss/changelog-autotagger
 changelog-autotagger ./my-release-notes.txt --release-version=1.2.3
 ```
 
+### Authentication
+
+Out of the box, the JIRA client uses https authentication. To connect to your JIRA instance, you need to export the below environment variables:
+
+```
+export JIRA_ADAPTER_HOST=YOUR_JIRA_INSTANCE.atlassian.net
+export JIRA_ADAPTER_USERNAME=YOUR_USERNAME
+export JIRA_ADAPTER_PASSWORD=YOUR_PASSWORD_TOKEN
+```
+
+JIRA has disabled API access via direct password. See [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) for more details and instructions for setting up a token.
+
 ### Options
 
 | Param name | Description | Usage | Expected |
