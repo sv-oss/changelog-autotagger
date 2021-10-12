@@ -5,7 +5,7 @@ import { RE_CLOSES_TICKET } from './constants';
 type MainArgs = {
   releaseNotesPath: string;
   releaseVersion: string;
-  shortRepoName?: string;
+  prefix?: string;
   adapterPath?: string;
 }
 
@@ -23,11 +23,11 @@ export default async function main({
   releaseNotesPath,
   releaseVersion,
   adapterPath = './adapters/http-jira-adapter',
-  shortRepoName = '',
+  prefix = '',
 }: MainArgs) {
   log(chalk.grey('Beginning tagging of changelog process'));
 
-  const version = [shortRepoName, releaseVersion].filter(Boolean).join('-');
+  const version = [prefix, releaseVersion].filter(Boolean).join('-');
 
   let adapter: IAdapter;
   try {

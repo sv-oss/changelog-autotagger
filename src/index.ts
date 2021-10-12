@@ -10,7 +10,7 @@ const cmd = command({
   args: {
     releaseNotesPath: positional({
       type: string,
-      displayName: 'releaseNotesPath',
+      displayName: 'release notes path',
     }),
     rv: option({
       type: string,
@@ -21,9 +21,9 @@ const cmd = command({
       long: 'adapter-path',
       defaultValue: () => './adapters/http-jira-adapter',
     }),
-    s: option({
+    prefix: option({
       type: optional(string),
-      long: 'short-repo-name',
+      long: 'prefix',
     }),
   },
   handler: async args => {
@@ -31,11 +31,10 @@ const cmd = command({
       releaseNotesPath: args.releaseNotesPath,
       releaseVersion: args.rv,
       adapterPath: args.p,
-      shortRepoName: args.s,
+      prefix: args.prefix,
     });
   },
 });
-
 
 run(cmd, process.argv.slice(2)).then(() => {
   console.log('Done');
