@@ -23,6 +23,7 @@ const project = new TypeScriptAppProject({
     '@types/jira-client',
   ],
   gitignore: ['.env'],
+  homepage: 'https://github.com/sv-oss/changelog-autotagger',
 });
 
 // add support for dom library in typescript compiler
@@ -32,6 +33,11 @@ addTsOverride('compilerOptions.useUnknownInCatchVariables', false);
 
 project.synth();
 
+/**
+ * addTsOverride - Adds an override to all tsconfig files (base, eslint & test)
+ * @param {string} path - The path to override
+ * @param {*} value - The new overridden value
+ */
 function addTsOverride(path, value) {
   project.tsconfig.file.addOverride(path, value);
   project.tsconfigEslint.file.addOverride(path, value);
